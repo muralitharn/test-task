@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: customerServices.softsuave.controllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.991 s <<< FAILURE! -- in customerServices.softsuave.controllerTest
+customerServices.softsuave.controllerTest.getCustomerTest -- Time elapsed: 0.761 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <{"customerId":0,"customerName":null,"email":null,"address":null,"creationDate":1728650380601,"lastUpdatedDate":null,"password":null,"role":null,"cashValut":100,"active":false}> but was: <{"customerId":1,"customerName":"John Doe","email":"john.doe@gmail.com","address":"123 Main St, Springfield","creationDate":1728650380599,"lastUpdatedDate":1728650380599,"password":"password123","role":"USER","cashValut":100,"active":true}>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at customerServices.softsuave.controllerTest.getCustomerTest(controllerTest.java:82)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+customerServices.softsuave.controllerTest.softDeleteCustomerTest -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <"customer deleted"> but was: <{"customerId":1,"customerName":"John Doe","email":"john.doe@gmail.com","address":"123 Main St, Springfield","creationDate":1728650380778,"lastUpdatedDate":1728650380778,"password":"password123","role":"USER","cashValut":100,"active":true}>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at customerServices.softsuave.controllerTest.softDeleteCustomerTest(controllerTest.java:91)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

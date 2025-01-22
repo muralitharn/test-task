@@ -1,0 +1,7 @@
+softsuave\AdsCost\controller\AdsCostAndPricing.class
+softsuave\AdsCost\repo\AdsTypeRepository.class
+softsuave\AdsCost\services\AdsServices.class
+softsuave\AdsCost\AdsCostApplication.class
+softsuave\AdsCost\enums\AdsType.class
+softsuave\AdsCost\entity\AdsCostTabel.class
+softsuave\AdsCost\exception\adsCostException.class
