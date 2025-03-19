@@ -1,56 +1,92 @@
-This Spring Boot application demonstrates enterprise-grade features with modern development practices. It implements a robust REST API with JWT-based authentication for secure endpoints, coupled with comprehensive email integration using Spring's MimeMessage for rich HTML content delivery. The system emphasizes cost-efficiency through optimized JSON processing with Jackson's JsonNode for lightweight data handling.
+============================================
+PROJECT OVERVIEW
+============================================
+This Spring Boot application demonstrates enterprise-grade features with modern development practices. It implements a secure REST API with JWT authentication, email integration, and efficient document processing capabilities while emphasizing cost optimization through JSON node utilization.
 
-Key Features 🚀
-Security & Authentication
-JWT implementation with access/refresh token mechanism
+============================================
+KEY FEATURES
+============================================
+SECURITY:
+- JWT authentication with access/refresh tokens
+- Role-based authorization using Spring Security
+- Custom token validation filters
 
-Spring Security configuration for role-based endpoint protection
+EMAIL SYSTEM:
+- MIME message implementation for HTML emails
+- Attachment support for documents/files
+- Asynchronous email delivery configuration
 
-Token validation filter with custom claim verification
+API DOCUMENTATION:
+- OpenAPI 3/Swagger UI available at /swagger-ui.html
+- Integrated JWT support in Swagger interface
+- Detailed request/response schema documentation
 
-Email Integration
-MimeMessage-powered email sender with attachment support
+DATABASE:
+- H2 database with file-based persistence
+- LOB storage for Excel/Word documents
+- SQL initialization scripts in /resources/db
 
-HTML template engine integration for dynamic content
+FILE PROCESSING:
+- Apache POI integration for Excel/Word generation
+- Database storage of generated files as BLOBs
+- Batch processing capabilities
 
-Async email delivery configuration
+SYSTEM OPERATIONS:
+- Spring Actuator endpoints (/actuator/*)
+- Custom metrics monitoring (email stats, API response times)
+- Scheduled tasks with cron expressions
 
-API Documentation
-OpenAPI 3/Swagger UI implementation at /swagger-ui.html
+DESIGN PATTERNS:
+- Factory pattern implementation for:
+  * Multiple response formats (JSON/XML/CSV)
+  * Document export handlers
+  * Email strategy variations
+- Custom exception hierarchy with global handling
+- Standardized error response structure
 
-Detailed endpoint documentation with request/response schemas
+============================================
+TECHNOLOGY STACK
+============================================
+- Spring Boot 3.x, Spring Security, Spring Data JPA
+- H2 Database (Embedded & Server modes)
+- Apache POI 5.x, Jackson Databind
+- Spring Actuator, Micrometer
+- OpenAPI 3, Swagger UI
+- Maven Build System
 
-JWT authentication support in Swagger interface
+============================================
+SETUP INSTRUCTIONS
+============================================
+1. Configure application.properties:
+spring.mail.host=your-smtp-host
+jwt.secret=your-256-bit-secret
 
-Database & Storage
-H2 in-memory database with persistent file storage configuration
+2. Run application:
+mvn spring-boot:run
 
-SQL database initialization scripts in /resources/db
+3. Access endpoints:
+Swagger UI: http://localhost:8080/swagger-ui.html
+H2 Console: http://localhost:8080/h2-console
+Actuator: http://localhost:8080/actuator
 
-LOB (Large Object) handling for Excel file storage
+4. Authentication:
+POST http://localhost:8080/api/auth/login
+Body: {"username":"user","password":"pass"}
 
-Apache POI integration for Excel/Word document generation
+============================================
+DOCUMENT PROCESSING
+============================================
+- Excel generation using XSSFWorkbook
+- Word documents with XWPFDocument
+- File storage in database BLOB columns
+- Batch operations with Spring Batch
 
-System Operations
-Spring Actuator endpoints at /actuator for health monitoring
+============================================
+MONITORING
+============================================
+Custom actuator endpoints:
+- /actuator/emailmetrics: Email delivery statistics
+- /actuator/apimetrics: API response metrics
+- /actuator/scheduledtasks: Cron job statuses
 
-Custom metrics exposure through Actuator
-
-Scheduled tasks with @Scheduled cron expressions
-
-Quartz scheduler integration for job management
-
-Advanced Patterns
-Factory design pattern implementation for:
-
-Dynamic response generation (JSON/XML/CSV)
-
-Multiple email strategy handlers
-
-Document export format handlers
-
-Custom exception hierarchy with @ControllerAdvice handling
-
-Global error response standardization
-
-
+Note: Replace placeholder values (your-smtp-host, your-256-bit-secret) with actual configuration values before running.
