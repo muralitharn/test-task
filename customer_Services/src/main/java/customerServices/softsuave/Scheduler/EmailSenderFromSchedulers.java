@@ -5,15 +5,25 @@ import customerServices.softsuave.Repository.CustomerRepository;
 import customerServices.softsuave.config.PaymentDetails;
 import customerServices.softsuave.cuustomerServicse.CustomerServices;
 import customerServices.softsuave.newModel.Customer;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.List;
 
 @Component
@@ -66,15 +76,60 @@ public class EmailSenderFromSchedulers {
 //        List<Customer> customer = customerRepos.findAll();
 //        for (Customer customerDetail : customer) {
 //            PaymentDetails paymentDetails = customerServices.getpaymentModeByRest(customerDetail.getCustomerId());
-//            if (paymentDetails.getPaymentType() == paymentMode.EMI) {
+//            if (paymentDet
+//            ails.getPaymentType() == paymentMode.EMI) {
 //                body = "pay your bill bro! what is this " + customerDetail.getCustomerName() + "dont do this again";
 //                subject = "regards your emi bro";
 //                sendEmail(customerDetail.getEmail(), subject, body, senderMail);
 //            }
 //        }
 //
-    public String sendMimeHtmlContent(){
+    public String sendMimeHtmlContent(String toEmail, String subject, String body ,String sender) throws MessagingException, IOException {
+        Session session = Session.getDefaultInstance(System.getProperties());
+        MimeMessage message = new MimeMessage(session);
 
-   return "message sent succesfully "; }
+        message.setFrom(new InternetAddress(toEmail));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(sender));
+        message.setSubject(subject);
+
+        // Create a multi-part message (text + attachment)
+        MimeMultipart multipart = new MimeMultipart();
+
+        // Text part
+        MimeBodyPart textPart = new MimeBodyPart();
+        textPart.setText("This is the email body.");
+
+        // Attachment part
+        MimeBodyPart attachmentPart = new MimeBodyPart();
+        attachmentPart.attachFile("path/to/file.pdf");
+        attachmentPart.setFileName("document.pdf");
+
+        // Add parts to the MIME message
+        multipart.addBodyPart(textPart);
+        multipart.addBodyPart(attachmentPart);
+        message.setContent(multipart);
+
+        // Send the email (configure SMTP details)
+        Transport.send(message);
+//      content html cntent
+        MimeMessage htmlcontent = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(htmlcontent, true, "UTF-8");
+
+          String htmlContent = """
+                    <html>
+                        <body>
+                            <h1 style="color: blue;">Welcome to Our Service!</h1>
+                            <p>This is a <strong>test HTML email</strong> sent from Spring Boot.</p>
+                            <a href="https://example.com">Visit our website</a>
+                        </body>
+                    </html>
+                """;
+
+        helper.setFrom(toEmail);
+        helper.setTo(sender);
+        helper.setSubject(subject);
+        helper.setText(htmlContent, true);  // `true` indicates HTML
+
+        return "message sent succesfully "; }
 //    }
 }
