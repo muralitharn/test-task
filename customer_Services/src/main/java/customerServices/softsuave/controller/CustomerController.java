@@ -24,6 +24,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @SecurityRequirement(name = "Bearer Authentication")
 public class CustomerController {
 
+    public static final String CUSTOMER_API = "/customer-api";
     @Autowired
     private final CustomerServices customerServices;
 

@@ -38,7 +38,8 @@ public class ApplicationSecurityConfig {
                                         , "/h2-console/**"
                                 ,"/swagger-ui.html"
                                 ,"/swagger-ui/**"
-                                        ,"/v3/api-docs/**","/customer-api?**").permitAll()
+                                        ,"/v3/api-docs/**","/customer-api?**",
+                                        "/health","/info","/prometheus","/metrics","/actuator/**").permitAll()
                                 .requestMatchers("/AdsCosting-api/**","/placed-orders-api/**").permitAll()
                             .requestMatchers("/get-customer/").hasRole("SUPERUSER")
                              .requestMatchers("/delete-customer").hasRole("ADMIN")

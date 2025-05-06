@@ -73,5 +73,8 @@ public class EmailSenderFromSchedulers {
 //            }
 //        }
 //
+    public String sendMimeHtmlContent(){
+
+   return "message sent succesfully "; }
 //    }
 }

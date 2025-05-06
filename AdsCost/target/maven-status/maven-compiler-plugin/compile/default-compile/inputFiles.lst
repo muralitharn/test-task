@@ -1,8 +1,8 @@
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\AdsCostApplication.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\config\generalCOnfig.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\controller\AdsCostAndPricing.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\entity\AdsCostTabel.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\enums\AdsType.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\exception\adsCostException.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\repo\AdsTypeRepository.java
-C:\Users\softsuave\Desktop\test task microservices (customer ,ads, order servicse)\AdsCost (1)\AdsCost\src\main\java\softsuave\AdsCost\services\AdsServices.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\AdsCostApplication.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\config\SwaggerConfig.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\controller\AdsCostAndPricing.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\entity\AdsCostTabel.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\enums\AdsType.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\exception\adsCostException.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\repo\AdsTypeRepository.java
+C:\Users\muralitharan g.s\OneDrive\Desktop\taskin-all\test-task\AdsCost\src\main\java\softsuave\AdsCost\services\AdsServices.java
